@@ -1,0 +1,42 @@
+import pandas as pd
+import numpy as np
+
+hist=df.hist() //histogram of all data columns
+
+hist=df.hist(“DAYS”) //for particular column
+
+df.plot.scatter("SQFT","DAYS") //scatter plot for 2 columns
+
+df.boxplot() //box plot for all columns
+
+df.boxplot("SQFT“) //for a particular column
+
+df.boxplot("SQFT","BATHS") //for a column by another column
+
+boxplot = df.boxplot(column=['SALE_PRICE','DAYS','BATHS']) //for more than 1 column
+
+//MSEXCEL and box plot using input
+import pandas as pd
+import numpy as np
+file_loc=input('Enter Excel file Location=')
+df=pd.read_excel(file_loc)
+var=input('Which column you wanna choose for Boxplot')
+boxplot = df.boxplot(column=[var])
+print(boxplot)
+
+//boxplot using matplot.lib
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+df=pd.read_excel(r‘path\house price data - class
+work.xls')
+x=df["SALE_PRICE"]
+fig = plt.figure(figsize =(10, 7))
+plt.boxplot(x)
+plt.show()
+
+plt.boxplot(x,patch_artist=True,boxprops =dict(facecolor="blue"))
+
+
+
+
