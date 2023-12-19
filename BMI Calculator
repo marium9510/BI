@@ -1,0 +1,6 @@
+name=input('Enter Your Name')
+age=input("Your Age?")
+weight=float(input('Your Weight in kgs'))
+height = float(input("Height in ft?"))
+BMI=weight/(height*0.305)**2
+print(name,"Your BMI is=",BMI)
