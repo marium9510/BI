@@ -37,6 +37,47 @@ plt.show()
 
 plt.boxplot(x,patch_artist=True,boxprops =dict(facecolor="blue"))
 
+//Checking consistency
+//need to test consistency of one dataset in the previous file titled ‘DAYS’
+x=df.loc[:,"DAYS"] or x=df*‘DAYS’+
+mx=x.mean()
+sx=x.std()
+print(mx)
+print(sx)
+cv=sx/mx*100
+print("CV=",cv)
+if cv>50 : print("less consistent")
+
+//Correlation
+c=df.corr()  //all correlations between numeric columns
+print(c)
+
+//getting correlation of a particular set of variables, we need to define arrays
+import numpy as np
+x=df.loc[:,"DAYS"] or x=df*‘DAYS’+
+y=df.loc[:,"SQFT"] or y=df*‘SQFT’+
+c=np.corrcoef(x,y)
+print(c)
+
+//correlation in pandas
+df.corr()
+df[‘DAYS’].corr(df[‘SQFT’]) //for two columns
+
+//Linear regression
+import pandas as pd
+import scipy.stats
+df=pd.read_excel(r‘house sale file with location')
+x=df['DAYS']
+y=df['SQFT']
+result = scipy.stats.linregress(x, y)
+print(result)
+
+//OLS using stats model
+import statsmodels.formula.api as sm
+//a multiple linear regression model to predict the dependent variable SALE_PRICE based on two independent variables SQFT and DAYS
+result = sm.ols(formula="SALE_PRICE ~ SQFT + DAYS", data=df).fit()
+print(result.summary())
+If we only need to print Model parameters, we can write: print(result.params)
 
 
 
