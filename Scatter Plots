@@ -1,0 +1,51 @@
+import pandas as pd
+df=pd.read_excel(r‘house sale file with location')
+ax1=df.plot.scatter('DAYS','SQFT')
+
+//Seperate Excel Data progammatically - column type wise
+import pandas as pd
+df=read_excel(r’path with filename’)
+//Now we need pandas to identify unique values:
+split_values=df['ord_type'].unique()
+//If you want to see all unique values, you can
+print(split_values)
+
+//generate a loop to generate separate files:
+for value in split_values:
+df1=df[df['ord_type']==value]
+output_file_name="ord_type"+str(value)+".xlsx“
+df1.to_excel(output_file_name,index=False
+)
+
+//Splitting EXCEL column with delimiters
+str.split('-’)
+//for getting two separate Columns, we use,
+str.split('-',expand=True)
+
+import pandas as pd
+df=pd.read_excel(r’path\Questionnairecw.xlsx',sheet_name=‘Sheet1’)
+df['Q6-Expenditure on Clothing'].str.split('-')
+
+import pandas as pd
+df=pd.read_excel(r’path\Questionnairecw.xlsx',sheet_name=‘Sheet1’)
+df['Q6-Expenditure on Clothing'].str.split(‘-’,expand=True)
+
+import pandas as pd
+df=pd.read_excel(r’path\Questionnairecw.xlsx',sheet_name=‘Sheet1’)
+df['Q6-Expenditure on Clothing'].str.split(‘-’,expand=True)
+df1=df['Q6-Expenditure on Clothing'].str.split(‘-’,expand=True)
+print(df1[1]) OR print(df1[2])
+
+//Converting String Column into Numeric in pandas
+df1=df['Q6-Expenditure on Clothing'].str.split(‘-’,expand=True)
+//We can convert each column from string to numeric one by one:
+df1[0]=pd.to_numeric(df1[0])
+df1[1]=pd.to_numeric(df1[1])
+df1.mean()
+
+df1[0]=pd.to_numeric(df1[0])
+df1[1]=pd.to_numeric(df1[1])
+df1.mean(axis=1)
+
+
+
