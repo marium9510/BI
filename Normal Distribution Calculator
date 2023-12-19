@@ -1,0 +1,11 @@
+from scipy.stats import norm
+x=float(input('Enter value of x='))
+mean=float(input('Enter Mean='))
+stdev=float(input('Enter SD='))
+norm.cdf(x,mean,stdev)
+
+norm.cdf(-1,0,1) will return value of area under the standard normal curve to the left
+
+norm.ppf(value of probability,mean,sd) //Inverse Normal Distribution reveals z-scores or percentage points, therefore syntax to get percentage points
+
+norm.ppf(0.5,0,1) will give you the value of z=0.0
