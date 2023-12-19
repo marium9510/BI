@@ -1,0 +1,46 @@
+import matplotlib.pyplot as plt
+
+//line graph of 2 variables
+days=[1,2,3,4,5,6,7]
+temp=[43,32,35,49,42,28,33]
+plt.plot(days,temp)
+plt.show()
+plt.plot(days,temp,”*”)
+
+//Labelling the graph
+import matplotlib.pyplot as plt
+days=[1,2,3,4,5,6,7]
+temp=[43,32,35,49,42,28,33]
+plt.plot(days,temp,color=‘r’,marker=‘o’) //changing graph line color
+plt.axis([0,8,0,50])
+plt.plot(days,temp)
+plt.title("Karachi Temp")
+plt.xlabel("Days")
+plt.ylabel("Temp")
+plt.show()
+
+//Styles of matplot.lib
+import matplotlib.pyplot as plt
+from matplotlib import style
+days=[1,2,3,4,5,6,7]
+temp=[43,32,35,49,42,28,33]
+style.use(“ggplot”)
+plt.plot(days,temp,color=‘r’,marker=‘o’)
+plt.title("Karachi Temp")
+plt.xlabel("Days")
+plt.ylabel("Temp")
+plt.legend(["Temp line"],loc=4)
+plt.show()
+
+//Adding data in matplot.lib
+import matplotlib.pyplot as plt
+days=[1,2,3,4,5,6,7]
+tempkarachi=[43,32,35,49,42,28,33]
+temphyd=[44,37,39,48,48,32,37]
+plt.plot(days,tempkarachi)
+plt.plot(days,temphyd)
+plt.show()
+
+
+
+
