@@ -1,0 +1,21 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_excel(r’path with file name with extension xlsx’)
+print(df)
+
+//taking file as an input from user
+path=input('Enter Path=')
+df=pd.read_excel(path)
+print(df)
+
+//importing a column
+df = pd.read_excel(r’path with file name with extension xlsx’, usecols=‘B’)
+print(df)
+
+//computing mean, stddev row and column wise
+mean = df.mean(axis=0) //axis=0 will give mean of all columns and axis=1 will give for rows
+
+desc=df.describe() //It will display, count, mean, std, Q1,Q2,Q3, Min and Max values
+
+
