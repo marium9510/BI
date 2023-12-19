@@ -1,0 +1,7 @@
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+ìmport numpy as np
+
+x_axis = np.arange(-10, 10, 0.01)
+plt.plot(x_axis, norm.pdf(x_axis, 0, 4))
+plt.show()
