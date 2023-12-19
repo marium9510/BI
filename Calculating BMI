@@ -1,0 +1,6 @@
+Calculating BMI in python
+
+Weight=85
+Height=6
+BMI=Weight/(Height*0.305)**2
+print(BMI)
