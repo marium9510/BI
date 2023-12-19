@@ -1,0 +1,15 @@
+import statistics
+x = (22,12,34,10,12)
+mean=statistics.mean(x)
+print(mean)
+
+//For median
+med=statistics.median(x)
+
+//For Variance
+var=statistics.variance(x)
+
+//For Standard Deviation
+sd=statistics.stdev(x)
+
+For population variance and standard deviations, we use, pvariance and pstdev
