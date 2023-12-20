@@ -1,0 +1,43 @@
+import matplotlib.pyplot as plt
+x=[21.2, 19.9, 21.2, 18.7, 22.1, 16.9, 18.5, 19.0,
+22.6, 22.5, 17.0, 21.4, 17.0, 22.9]
+plt.hist(x)
+plt.show()
+
+//showing with bin values
+import matplotlib.pyplot as plt
+x=[21.2, 19.9, 21.2, 18.7, 22.1, 16.9, 18.5, 19.0, 22.6, 22.5, 17.0, 21.4, 17.0, 22.9]
+bins=[16,18,20,22,24]
+
+plt.hist(x,bins,ec=‘k‘) //for black edgecolor
+plt.hist(x,bins, edgecolor="black") //for long
+plt.hist(x,bins,rwidth=0.98) //for 98% bar width
+plt.hist(x,bins,rwidth=0.98,orientation='horizontal') //for horizontal histogram
+
+plt.hist(x,bins)
+plt.show()
+
+//for color
+plt.hist(x,bins,rwidth=0.98,color='r')
+``'b'`` blue
+``'g'`` green
+``'r'`` red
+``'c'`` cyan
+``'m'`` magenta
+``'y'`` yellow
+``'k'`` black
+``'w'`` white
+
+plt.grid()
+plt.grid(axis=‘y',color='y')
+
+//labelling edges
+import matplotlib.pyplot as plt
+days=[1,2,3,4,5,6,7]
+temp=[43,32,35,49,42,28,33]
+plt.plot(days,temp,color=‘r’,marker=‘o’)
+plt.title("Karachi Temp")
+plt.xlabel("Days")
+plt.ylabel("Temp")
+plt.show()
+
