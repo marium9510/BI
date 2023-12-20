@@ -1,0 +1,86 @@
+//For single average
+from scipy.stats import ttest_1samp
+
+//if we want to test whether population mean µ=64 provided following sample values
+x=(60,67, 55, 45, 80)
+tset, pval = ttest_1samp(x,64)
+print(pval)
+
+//t-test coding 'if' command
+from scipy.stats import ttest_1samp
+x=(60,67, 55, 45, 80)
+tval, pval = ttest_1samp(x,64)
+print(pval)
+if pval < 0.05: # alpha value is 0.05 or 5%
+ print(" we are rejecting null hypothesis")
+else:
+ print("we are accepting null hypothesis")
+
+//t-test independent two sample
+//we need to test whether first week’s sale is different from second week. We observe data sets first
+from scipy.stats import ttest_ind
+week1=(12,15,17,7,11,3,10)
+week2=(4,10,3,3,6,11,2)
+tval,pval = ttest_ind(week1,week2)
+print("p-value",pval)
+tval,pval =
+ttest_ind(week1,week2,equal_var=False)
+
+//t-test for independent 2 sample in columns in excel 
+import pandas as pd
+import numpy as np
+from scipy.stats import ttest_ind
+week1=pd.read_excel(r'C:\Users\HP-PC\Documents\Spring
+2022\BS\BI\weeklysale.xlsx',usecols='A')
+week2=pd.read_excel(r'C:\Users\HP-PC\Documents\Spring
+2022\BS\BI\weeklysale.xlsx',usecols='B')
+mean1=week1.mean()
+mean2=week2.mean()
+tval,pval = ttest_ind(week1,week2)
+print("p-value",pval)
+print(tval)
+print(mean1,mean2)
+
+//Independent Sample T-Test by splitting EXCEL column categorically
+import pandas as pd
+df=pd.read_excel(r‘path\Airlift - case study - data
+set.xlsx',sheet_name='Data set 1')
+split_values=df['ord_type'].unique()
+from scipy.stats import ttest_ind
+df1=df[df['ord_type']=='Repeat']
+df2=df[df['ord_type']=='New']
+x=df1["orders"]
+y=df2["orders"]
+tval,pval = ttest_ind(x,y)
+print("p-value",pval)
+
+//Running Chi Square Test in PANDAS
+import pandas as pd
+df=pd.read_excel(r‘path\Bike Rental Count.xlsx')
+contigency= pd.crosstab(df['season'], df['weekday'])
+print(contigency)
+from scipy.stats import chi2_contingency
+c, p, dof, expected = chi2_contingency(contigency)
+print(p)
+
+//For a provided cross tabulation, we need to define it:
+df=[(243,1910),(25,483),(55,470)]
+c, p, dof, expected = chi2_contingency(df)
+print(p)
+
+a=float(input('Value of a')) //taking value of 'a' as input from user
+df=[(a,1910),(25,483),(55,470)]
+
+import pandas as pd
+from scipy.stats import f_oneway
+df=pd.read_excel(r'C:\Users\HP-PC\Desktop\excel sheet final two stage - Income.xls')
+split_values=df['Sector'].unique()
+df1=df[df['Sector']=='Banking']
+df2=df[df['Sector']=='Teaching']
+df3=df[df['Sector']=='MNC']
+df4=df[df['Sector']=='Other']
+w=df1['Income']
+x=df2['Income']
+y=df3['Income']
+z=df4['Income']
+f_oneway(w, x, y, z)
