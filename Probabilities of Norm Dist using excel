@@ -1,0 +1,10 @@
+A dataset has a mean of 1010, and a standard deviation of 20.
+
+What is probability that x is below 1040? P(x<1040)
+=norm.dist(1040,1010,20,1)
+=0.9332
+
+What is probability that x is above 1040? P(x>1040)
+=1-norm.dist(1040,1010,20,1)
+=0.066807
+
